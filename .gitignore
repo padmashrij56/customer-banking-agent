@@ -1,12 +1,76 @@
-.claude/worktrees/
+# Python
 __pycache__/
-*.pyc
-.env
-.venv/
-venv/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
-.pytest_cache/
-.ipynb_checkpoints/
-vector_store/
-executed.ipynb
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+
+# Logs
+*.log
+logs/
+
+# Vector Database Storage
+*.faiss
+*.index
+vector_store/
+chroma_db/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.temp/
+temp/
+
+# OS
+Thumbs.db
+.DS_Store
+.claude/*
