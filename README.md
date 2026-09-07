@@ -2,7 +2,7 @@
 
 # 🏦 Enterprise Loan Underwriting Platform
 
-### Bootcamp 3 · Building a Production-Ready Multi-Agent Loan Underwriting Platform
+### Building a Production-Ready Multi-Agent Loan Underwriting Platform
 
 *A guided project for operationalizing a Planner-orchestrated, five-agent loan underwriting workflow — integrated with the Model Context Protocol, observed via LangSmith, validated by automated tests, and packaged for deployment.*
 
