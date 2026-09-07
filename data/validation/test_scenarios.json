@@ -1,0 +1,25 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "SC-01",
+      "application_id": "LOAN-5001",
+      "description": "Strong applicant: high income, high credit score, verified KYC - expect a favorable path through every agent.",
+      "expected_risk_tier": "Low",
+      "expected_compliance_status": "Pass"
+    },
+    {
+      "scenario_id": "SC-02",
+      "application_id": "LOAN-5003",
+      "description": "Weak applicant: lower income, mid credit score, KYC still Pending - expect Compliance to flag KYC.",
+      "expected_risk_tier": "Medium",
+      "expected_compliance_status": "Flagged"
+    },
+    {
+      "scenario_id": "SC-03",
+      "application_id": "LOAN-5005",
+      "description": "High-risk applicant: low credit score, multiple delinquencies, high utilization - expect High risk tier.",
+      "expected_risk_tier": "High",
+      "expected_compliance_status": "Pass"
+    }
+  ]
+}

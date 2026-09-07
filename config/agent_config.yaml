@@ -1,0 +1,73 @@
+# Agent Workflow Configuration
+# Enterprise Loan Underwriting Platform - Planner/Coordinator/specialist-agent
+# settings. Read by src/agents/planner_agent.py, src/core/agent_coordinator.py,
+# src/core/workflow_validator.py, and the 5 specialist agents.
+
+# Illustrative only - identifies this workflow for humans reading the
+# config; not currently read by any module (parallels BC1/BC2's
+# workflow.name/version, which are unread there too).
+workflow:
+  name: "loan_underwriting_platform"
+  version: "1.0.0"
+
+# The fixed, linear plan sequence (Scope Decision 6 - not a dynamic/branching
+# planner). Read by src/agents/planner_agent.py's build_plan().
+planner:
+  sequence:
+    - customer_profile
+    - credit_risk
+    - compliance
+    - lending_policy
+    - recommendation
+
+# Illustrative/documentation only - NOT read by src/core/agent_coordinator.py
+# (its self.steps registry is built directly in code against the same 5
+# names, per Activity 1.3's instructions). Kept here so the expected step
+# names are declared in one human-readable place alongside planner.sequence
+# above, which IS the value actually read by src/agents/planner_agent.py.
+coordination:
+  step_names:
+    - customer_profile
+    - credit_risk
+    - compliance
+    - lending_policy
+    - recommendation
+
+# Credit Risk Agent thresholds - read by src/agents/credit_risk_agent.py
+credit_risk:
+  score_thresholds:
+    low_risk_min: 750
+    medium_risk_min: 650
+  max_debt_to_income_pct: 45
+
+# Compliance Agent rules - read by src/agents/compliance_agent.py
+compliance:
+  max_loan_to_income_multiple: 10
+  required_kyc_status: "Verified"
+
+# Lending Policy Agent RAG settings - read by src/agents/lending_policy_agent.py
+lending_policy:
+  knowledge_base_path: "data/knowledge_base/loans"
+  top_k: 4
+  similarity_threshold: 0.5
+
+# Workflow validation (Activity 2.3) - read by src/core/workflow_validator.py
+validation:
+  required_result_fields:
+    - customer_profile
+    - credit_risk
+    - compliance
+    - lending_policy
+    - recommendation
+  allowed_decisions:
+    - Approve
+    - Refer
+    - Decline
+
+# Illustrative only - shows the shape a real enterprise config would have
+# for workflow-level logging controls. Not currently read by any module;
+# src/utils/logger.py's setup_logger() takes its level as a direct argument
+# instead (same pattern as BC1/BC2).
+logging:
+  level: "INFO"
+  log_plan_steps: true

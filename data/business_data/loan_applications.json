@@ -1,0 +1,79 @@
+{
+  "applications": [
+    {
+      "application_id": "LOAN-5001",
+      "customer_id": "CUST-1001",
+      "applicant_name": "Ananya Rao",
+      "loan_type": "personal",
+      "requested_amount": 500000,
+      "tenure_months": 36,
+      "purpose": "Home renovation",
+      "annual_income": 1800000,
+      "employment_status": "Salaried",
+      "existing_emis": 15000,
+      "kyc_status": "Verified",
+      "status": "Submitted",
+      "submitted_date": "2026-07-01"
+    },
+    {
+      "application_id": "LOAN-5002",
+      "customer_id": "CUST-1002",
+      "applicant_name": "Rohit Sharma",
+      "loan_type": "auto",
+      "requested_amount": 900000,
+      "tenure_months": 60,
+      "purpose": "New car purchase",
+      "annual_income": 950000,
+      "employment_status": "Salaried",
+      "existing_emis": 22000,
+      "kyc_status": "Verified",
+      "status": "Submitted",
+      "submitted_date": "2026-07-03"
+    },
+    {
+      "application_id": "LOAN-5003",
+      "customer_id": "CUST-1003",
+      "applicant_name": "Priya Nair",
+      "loan_type": "personal",
+      "requested_amount": 250000,
+      "tenure_months": 24,
+      "purpose": "Medical expenses",
+      "annual_income": 600000,
+      "employment_status": "Self-employed",
+      "existing_emis": 8000,
+      "kyc_status": "Pending",
+      "status": "Submitted",
+      "submitted_date": "2026-07-05"
+    },
+    {
+      "application_id": "LOAN-5004",
+      "customer_id": "CUST-1004",
+      "applicant_name": "Vikram Desai",
+      "loan_type": "home",
+      "requested_amount": 6500000,
+      "tenure_months": 240,
+      "purpose": "Home purchase",
+      "annual_income": 2400000,
+      "employment_status": "Salaried",
+      "existing_emis": 30000,
+      "kyc_status": "Verified",
+      "status": "Submitted",
+      "submitted_date": "2026-07-08"
+    },
+    {
+      "application_id": "LOAN-5005",
+      "customer_id": "CUST-1005",
+      "applicant_name": "Sneha Iyer",
+      "loan_type": "auto",
+      "requested_amount": 1200000,
+      "tenure_months": 72,
+      "purpose": "Used car purchase",
+      "annual_income": 480000,
+      "employment_status": "Salaried",
+      "existing_emis": 12000,
+      "kyc_status": "Verified",
+      "status": "Submitted",
+      "submitted_date": "2026-07-10"
+    }
+  ]
+}

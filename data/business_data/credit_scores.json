@@ -1,0 +1,44 @@
+{
+  "credit_scores": [
+    {
+      "customer_id": "CUST-1001",
+      "credit_score": 782,
+      "bureau": "CIBIL",
+      "report_date": "2026-06-15",
+      "delinquencies": 0,
+      "credit_utilization_pct": 22
+    },
+    {
+      "customer_id": "CUST-1002",
+      "credit_score": 701,
+      "bureau": "CIBIL",
+      "report_date": "2026-06-20",
+      "delinquencies": 1,
+      "credit_utilization_pct": 38
+    },
+    {
+      "customer_id": "CUST-1003",
+      "credit_score": 640,
+      "bureau": "CIBIL",
+      "report_date": "2026-06-22",
+      "delinquencies": 2,
+      "credit_utilization_pct": 55
+    },
+    {
+      "customer_id": "CUST-1004",
+      "credit_score": 810,
+      "bureau": "CIBIL",
+      "report_date": "2026-06-25",
+      "delinquencies": 0,
+      "credit_utilization_pct": 15
+    },
+    {
+      "customer_id": "CUST-1005",
+      "credit_score": 615,
+      "bureau": "CIBIL",
+      "report_date": "2026-06-28",
+      "delinquencies": 3,
+      "credit_utilization_pct": 68
+    }
+  ]
+}

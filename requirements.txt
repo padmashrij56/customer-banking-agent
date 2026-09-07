@@ -1,0 +1,20 @@
+# Enterprise Loan Underwriting Platform - runtime dependencies.
+# Keep every comment on ONE line: multi-line "#" blocks get reflowed by
+# formatters and a wrapped line without "#" breaks `pip install`.
+
+python-dotenv==1.0.0
+openai==2.9.0
+mcp==1.9.4              # Model Context Protocol (Activity 2.1)
+langsmith==0.11.2       # Observability (Activity 2.2); pinned for reproducibility
+faiss-cpu==1.12.0       # vector index for the reused BC1/BC2 knowledge base
+numpy==2.3.2
+streamlit==1.46.1
+pyyaml==6.0.3
+pytest==7.4.3           # Activity 3.1 smoke suite
+
+# Transitive deps pinned explicitly for Python 3.14 wheel / resolver stability.
+pydantic==2.13.3        # first version whose pydantic-core (2.46.3) ships a cp314 wheel
+typing-extensions==4.15.0
+
+# Not used by this project (unlike BC1/BC2): langchain, langchain-openai,
+# langgraph, pandas, requests, python-json-logger - all confirmed via grep.

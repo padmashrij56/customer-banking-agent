@@ -1,0 +1,30 @@
+# MCP (Model Context Protocol) Configuration
+# Defines the ONE enterprise capability exposed via MCP for this bootcamp
+# (Scope Decision 2 - one clean example of the protocol, not a full tool
+# migration). Read by src/mcp/mcp_server.py and src/mcp/mcp_client.py.
+
+server:
+  name: "loan-underwriting-mcp"
+  # Transport used by the client to launch/connect to the server.
+  # "stdio" runs the server as a local subprocess - no network/paid API
+  # involved, safe to exercise offline.
+  transport: "stdio"
+  module: "src.mcp.mcp_server"
+
+# Illustrative/documentation only - mirrors what mcp_server.py registers
+# with FastMCP via its own docstring and @mcp_app.tool() decorator (which is
+# the actual source of truth FastMCP uses at runtime). Not read by any
+# module; kept here so the tool's declared shape is visible without reading
+# code.
+tools:
+  get_credit_score:
+    description: "Look up a customer's credit bureau record (score, delinquencies, utilization) by customer_id."
+    input_schema:
+      customer_id: "string, required - e.g. CUST-1001"
+
+# Illustrative only - not currently enforced by src/mcp/mcp_client.py's
+# TODO implementation (a production version would wrap the
+# session.call_tool() await in asyncio.wait_for(..., timeout=this value)).
+# Documented here as the intended timeout for a future hardening pass.
+client:
+  call_timeout_seconds: 15

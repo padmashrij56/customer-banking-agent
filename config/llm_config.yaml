@@ -1,0 +1,55 @@
+# LLM Configuration
+# Reused pattern from Bootcamp 1/2 - this file defines LLM provider settings
+# and model parameters.
+#
+# Provider: configured for OpenRouter (https://openrouter.ai), so a single
+# key can be issued to every bootcamp participant instead of individual
+# OpenAI keys. This requires LLM_BASE_URL=https://openrouter.ai/api/v1 to
+# be set in .env - see .env.example. Model names below are OpenRouter's
+# provider-namespaced format ("openai/gpt-4", not "gpt-4").
+#
+# To use a direct OpenAI key instead: unset LLM_BASE_URL in .env, and
+# change every model_name below to drop the "openai/" prefix.
+provider:
+  name: "openrouter"
+  api_type: "openai"
+
+models:
+  # Primary LLM used by all 5 specialist agents for reasoning/response generation
+  chat:
+    model_name: "openai/gpt-4"
+    temperature: 0.4
+    max_tokens: 800
+    top_p: 1.0
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
+
+  # Embedding model for the Lending Policy Agent's RAG retrieval over
+  # data/knowledge_base/loans/ (reused FAISS knowledge base from BC1/BC2)
+  embedding:
+    model_name: "openai/text-embedding-3-small"
+    dimensions: 1536
+
+  # Lighter/cheaper settings for the Recommendation Agent's final synthesis
+  # call, which reasons over the other 4 agents' combined output rather than
+  # raw source documents. Read by src/agents/recommendation_agent.py.
+  synthesis:
+    model_name: "openai/gpt-4"
+    temperature: 0.2
+    max_tokens: 600
+
+# timeout and max_retries are read by LLMClient/EmbeddingGenerator and passed
+# to the OpenAI client. retry_delay is illustrative only - not currently read
+# anywhere (the OpenAI SDK handles retry backoff internally); kept for parity
+# with BC2's config and as an example of an intentionally-unread, documented value.
+api:
+  timeout: 60
+  max_retries: 3
+  retry_delay: 2
+
+# Illustrative only - shows the shape a real enterprise config would have for
+# content safety and context-window limits. Not currently read by any module.
+safety:
+  content_filter: true
+  max_context_length: 8000
+  truncate_if_exceeds: true
